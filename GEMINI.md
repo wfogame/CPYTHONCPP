@@ -1,53 +1,30 @@
-# GEMINI Analysis
+# Project: C++/Python Terminal Game
 
-## Project Overview
+## Goal
+To learn C++ and AI concepts by building a terminal-based game.
 
-This project appears to be a reference and learning resource for integrating C/C++ code with Python. It provides cheatsheets and example files to demonstrate how to compile C/C++ code into shared libraries and call them from Python, as well as how to manage interoperability between C and C++.
+## How the Program Fits Together
 
-## Key Files
+1.  `main.cpp` is the **starting point**. It contains the `main` function which runs the game loop.
+2.  Inside the loop, it gets input from the user and passes it to the `process_command` function.
+3.  To know about `process_command`, `main.cpp` includes the "blueprint" file, `commands.h`.
+4.  `commands.cpp` contains the actual code for `process_command` and all the helper functions for individual commands (like `handle_info`, `handle_add`).
+5.  The command functions use the `Player` object to do things. They know about the `Player` object because they include the `player.h` blueprint.
 
-*   `Cheatsheet.md`: A well-formatted Markdown file containing detailed instructions and code snippets for C/C++/Python interoperability. This is the primary documentation in this project.
-*   `Cheatsheet`: A plain text file that mirrors the content of `Cheatsheet.md`.
-*   `player.h`: A C++ header file that defines a `Player` class. The class includes attributes for the player's name and health, and an inventory system implemented using a `std::vector` of `std::string`.
-*   `README.md`: A file that currently contains uninformative placeholder text.
+## File-by-File Breakdown
 
-## Building and Running
+### Core Game Code
+*   `main.cpp`: **Entrypoint & Game Loop.** Starts the game and runs the main loop.
+*   `player.h`: **Player Blueprint.** Declares the `Player` class (defines what a Player is).
+*   `commands.h`: **Commands Blueprint.** Declares the command processing system for the rest of the app.
+*   `commands.cpp`: **Commands Logic.** Implements the logic for every chat command.
 
-There are no centralized build scripts (like `Makefile` or `package.json`) in this project. However, the `Cheatsheet.md` file provides the following example commands for compiling and using the C/C++ modules:
+### Learning & Documentation
+*   `GEMINI.md`: (This file) A quick summary of the project structure.
+*   `Outline.md`: **Detailed Notebook.** Contains our deep-dive explanations of C++ topics.
+*   `Cheatsheet.md`: **Quick Reference.** For C++ syntax and build commands.
+*   `AI_Concepts.md`: **AI Theory.** An essay on Neural Networks and Gradient Descent.
+*   `session_summary_...md`: **Session Logs.** A summary of what we do in each session.
 
-### Compiling C++ for Python
-
-To compile a C++ file (`module.cpp`) into a shared library (`module.so`):
-
-```bash
-g++ -shared -fPIC -o module.so module.cpp
-```
-
-### Compiling C for Python
-
-To compile a C file (`module.c`) into a shared library (`module.so`):
-
-```bash
-gcc -shared -fPIC -o module.so module.c
-```
-
-### Calling from Python
-
-The `Cheatsheet.md` provides the following example of how to call a function from a shared library in Python using the `ctypes` module:
-
-```python
-import ctypes
-
-_lib = ctypes.CDLL('./module.so')
-
-def func(a, b):
-    return _lib.func(a, b)
-
-# Example usage:
-# import my_module
-# my_module.func(5, 3)
-```
-
-## Development Conventions
-
-This project does not have any explicit development conventions. It is a collection of reference materials rather than a collaborative software project.
+### Compiled Output
+*   `a.out`: The final, runnable game executable, created by linking `main.o` and `commands.o`.
