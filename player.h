@@ -4,39 +4,44 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
+using namespace std;
 class Player {
 public:
     // Constructor
-    Player(const std::string& name) : name(name), health(100) {
+    Player(const string& name) : name(name), health(100) {
         // Initialize inventory with a fixed size (e.g., 20 slots)
         inventory.reserve(20);
     }
 
     // Function to add an item to the inventory
-    void addItem(const std::string& item) {
+    void addItem(const string& item) {
         if (inventory.size() < 20) {
             inventory.push_back(item);
-            std::cout << item << " added to inventory." << std::endl;
+            cout << item << " added to inventory." << endl;
         } else {
-            std::cout << "Inventory is full." << std::endl;
+            cout << "Inventory is full." << endl;
         }
     }
 
     // Function to display player's information
     void displayInfo() {
-        std::cout << "Player: " << name << std::endl;
-        std::cout << "Health: " << health << std::endl;
-        std::cout << "Inventory:" << std::endl;
-        for (const auto& item : inventory) {
-            std::cout << "- " << item << std::endl;
+        cout << "Player Name: " << name << endl;
+        cout << "Health: " << health << endl;
+        cout << "Inventory: ";
+        if (inventory.empty()) {
+            cout << "Empty" << endl;
+        } else {
+            for (const auto& item : inventory) {
+                cout << item << " ";
+            }
+            cout << endl;
         }
     }
 
 private:
-    std::string name;
+    string name;
     int health;
-    std::vector<std::string> inventory;
+    vector<string> inventory;
 };
 
 #endif // PLAYER_H
