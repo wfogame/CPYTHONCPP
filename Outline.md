@@ -54,6 +54,43 @@ This project does not have any explicit development conventions. It is a collect
 
 ## Learning Resources
 
+### Terminal UI: Drawing with ANSI and Unicode
+
+To create a graphical-style interface in the terminal without external libraries, we can use a combination of ANSI escape codes and Unicode characters.
+
+#### ANSI Escape Codes
+
+These are special sequences of characters that your terminal interprets as commands instead of text to be printed. You can print them using `cout` just like any other string.
+
+*   **Clear Screen:** `"\033[2J"` - This code clears the entire terminal screen.
+*   **Move Cursor:** `"\033[<L>;<C>H"` - This moves the cursor to a specific location. `<L>` is the line number (row) and `<C>` is the column number.
+
+    *Example:* `cout << "\033[10;5H";` moves the cursor to line 10, column 5.
+
+By clearing the screen and then moving the cursor before each `cout`, we can draw a static scene instead of having our text scroll endlessly.
+
+#### Unicode Box-Drawing Characters
+
+Most modern fonts include special characters specifically for drawing borders and lines. We can use these to create a bordered window for our inventory.
+
+*   `─` (Horizontal Line)
+*   `│` (Vertical Line)
+*   `┌` (Top-Left Corner)
+*   `┐` (Top-Right Corner)
+*   `└` (Bottom-Left Corner)
+*   `┘` (Bottom-Right Corner)
+*   `├`, `┤`, `┬`, `┴`, `┼` (Intersections)
+
+#### Logic for Drawing a Box
+
+To draw a bordered box for our inventory, the `displayInfo` function will follow this logic:
+
+1.  Clear the screen using the ANSI code.
+2.  Move the cursor to the starting position.
+3.  Print the top border (e.g., `┌──────────┐`).
+4.  For each line of content (e.g., Player Name, Health), print a vertical bar `│`, the text, and another vertical bar `│`.
+5.  Print the bottom border (e.g., `└──────────┘`).
+
 ### C++ Project Structure and Build Process
 
 #### Header (.h) vs. Source (.cpp) Files
