@@ -1,0 +1,2 @@
+# Another main plan, AI given set of events, you as player work as genie, but thats too hard. we have cli to train, i have no idea how to impl:ment this bullshit............ absolutely no idea, hmm, prob drop it later, as not even following and dont plan to follow this vibe coded thingy... just cli with AI in it, maybe muitple mini games that test AI, YEP THAT IS IT;
+
