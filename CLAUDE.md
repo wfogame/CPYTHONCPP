@@ -11,7 +11,7 @@ This project is a command-line story game written in C++. The primary goal is to
 The application is structured into three main parts:
 
 *   **`main.cpp`**: This is the entry point of the program. It contains the main game loop, which reads user input and passes it to the command processor.
-*   **`player.h`**: This file defines the `Player` class. It manages the player's name, health, and inventory. A key feature is the `displayInfo()` method, which uses ANSI escape codes to draw a bordered window in the terminal to display player information.
+*   **`player.h`**: This file defines the `Player` class. It manages the player's name, health, and inventory. A key feature is the `displayInfo()` method, which will be developed to create a rich graphical interface in the terminal, potentially using a tool like Kitty's `icat` to display images instead of relying on simple ANSI escape codes.
 *   **`commands.cpp` and `commands.h`**: These files implement a command processing system. It uses a `std::map` to associate command strings (e.g., "info", "add", "help") with function pointers to the corresponding command handlers. This creates a clean and scalable way to add new commands.
 
 ## Common Commands
