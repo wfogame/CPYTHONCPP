@@ -2,12 +2,13 @@
 #include <sstream>
 #include <string>
 #include <sstream>
-double main(){
+#include "neuron.h"
+#include "RunCommand.h"
+int main(){
 
   using namespace std;
   string input;
   string command;
-  void RunCommand(string command);
   while(true){
 
   
