@@ -1,2 +1,1 @@
-The contributors be like...
-DISCLAIMER THIS IS ALL FAKE, DONT believe it is real, IT IS NOT. dont be foolish buddy. 
+Project for fun. 
