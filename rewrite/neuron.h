@@ -2,6 +2,7 @@
 #include <string>
 #include <sstream>
 #include <tuple>
+#include <vector>
 #ifndef NEURON_H
 #define NEURON_H
 using namespace std;
