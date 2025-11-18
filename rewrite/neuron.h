@@ -9,8 +9,8 @@ using namespace std;
 class Neuron{
   // MISSING SIGMOID cuz one neuron on;y system EHH too bad to sad;
   private:
-    double input = 1;
-    double weight = 1;
+    vector<double> input ;
+    vector<double> weight;
     double bias = 1;
     double target = 1;
     double output;  
@@ -22,7 +22,10 @@ class Neuron{
     double DoutputDbias = 1; // Obviously, add bias by 1, output adds by 1. Pretty obvious.
   public:
 
-    Neuron(double input, double weight, double bias, double target = 1):input(input),weight(weight),bias(bias),target(target){}
+    Neuron(vector<double> input, vector<double> weight, double bias, double target = 1):input(input),weight(weight),bias(bias),target(target){}
+    int GetWeights(){
+
+    }  
    void Update(double learningrate = 0.05){
      //WE need to find rate of change when loss change, how much does weight change, as we want to migate loss, by changing weight, as we can only change that.
      // If output is above target, then weight goes down, if it is the other way around, obviously since loss will be negative, negative * negative = postive so weight goes up, and eventually...
@@ -33,6 +36,11 @@ class Neuron{
       weight = weight - learningrate * dLossdOutput * DoutputDweight; // So, when output increases by 1, loss increases by 2 *(output-target), how much output changes is input_value * weigt, and so therefore if weight increases by 1, output increases by 1, and loss increases by 2 * ( output -target);
       bias = bias - learningrate * dLossdOutput * DoutputDbias; // Same logic. Although idk about updating both at same time but eh works enough;
     // SO this minimizes loss, because 
+   }
+
+   int UpdateWeights(){
+      
+     return 0;
    }
    auto infoGetter(){
     // BRUHH FUCK CHATGPT, I HAVE TO THIS messy thingy;
@@ -45,9 +53,6 @@ class Neuron{
     return make_tuple(weight,bias,output,loss);
    }
 
-   double NeuronChain(){
-    return output;
-   }
     
 
 };
