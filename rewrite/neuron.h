@@ -29,7 +29,8 @@ class Neuron{
    void Update(double learningrate = 0.05){
      //WE need to find rate of change when loss change, how much does weight change, as we want to migate loss, by changing weight, as we can only change that.
      // If output is above target, then weight goes down, if it is the other way around, obviously since loss will be negative, negative * negative = postive so weight goes up, and eventually...
-      output = input * weight + bias;
+     for(int i = 0; i< inputs.size(); i++)
+      output = output + input * weight + bias;
       loss = (output - target) * (output-target);
       dLossdOutput = 2 * (output - target); //Inaccurate, supposed to be 2 * (output - target) * learningrate^2. because (x+h)^2 =  x^2 + 2xh + h^2. so yeah. but learningrate is USUALLY small.
       DoutputDweight = input;

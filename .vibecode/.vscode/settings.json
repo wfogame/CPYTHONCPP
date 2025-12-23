@@ -1,0 +1,25 @@
+{
+    "files.associations": {
+        "bitset": "cpp",
+        "iostream": "cpp",
+        "chrono": "cpp",
+        "numeric": "cpp",
+        "format": "cpp",
+        "fstream": "cpp",
+        "istream": "cpp",
+        "shared_mutex": "cpp",
+        "system_error": "cpp",
+        "text_encoding": "cpp",
+        "regex": "cpp",
+        "typeindex": "cpp",
+        "typeinfo": "cpp",
+        "variant": "cpp",
+        "__config": "cpp",
+        "__locale": "cpp",
+        "cstdlib": "cpp",
+        "locale": "cpp",
+        "version": "cpp",
+        "*.def": "cpp",
+        "*.inc": "cpp"
+    }
+}

@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nfeat: Implement Command Pattern and improve UI\n\nThis commit refactors the command processing system to use the Command Design Pattern. This provides a more scalable and maintainable architecture for adding new commands.\n\n- A `Command` interface and `ConcreteCommands` for `info`, `add`, and `help` have been introduced.\n- The `commands.cpp` file now uses a map of smart pointers to `Command` objects.\n- The `player.h` file has been updated to display player information in a bordered window using ANSI escape codes.\n- Added documentation and learning files.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
